@@ -1,0 +1,28 @@
+version: '3'
+
+services: 
+    app: 
+        build: 
+            context: .
+            dockerfile: ./src/docker/Dockerfile
+        environment: 
+            - DB_MODE=postgresql
+            - DB_HOST=db
+            - DB_PORT=5432
+            - DB_NAME=usersdb
+            - DB_USER=postgres
+            - DB_PASSWORD=postgres
+        ports: 
+            - 80:5000                       # host:service ports
+        depends_on:
+            - db
+    
+    db:
+        image:
+            postgres:latest
+        environment:
+            - POSTGRES_DB=usersdb
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+        ports:
+            - 5432:5432
