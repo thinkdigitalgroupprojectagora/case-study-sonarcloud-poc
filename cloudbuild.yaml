@@ -1,12 +1,10 @@
 steps:
-  - name: 'eu.gcr.io/$PROJECT_ID/sonarcloud/sonar-scanner-cli'
+  - name: sonarsource/sonar-scanner-cli
     args:
     - '-Dsonar.host.url=https://sonarcloud.io'
-    - '-Dsonar.projectKey=thinkdigitalgroupprojectagora_case-study-sonarcloud-poc'
+    - '-Dsonar.projectKey=thinkdigitalgroupprojectagora_${REPO_NAME}'
     - '-Dsonar.organization=thinkdigitalgroupprojectagora'
     - '-Dsonar.sources=.'
-    # - '-Dsonar.scm.disabled=True'
-    # - '-Dsonar.login={specify}'
     - '-Dsonar.projectVersion=${COMMIT_SHA}'
     secretEnv: ['SONAR_TOKEN']
 
