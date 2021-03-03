@@ -5,6 +5,7 @@ steps:
     - '-Dsonar.projectKey=thinkdigitalgroupprojectagora_case-study-sonarcloud-poc'
     - '-Dsonar.organization=thinkdigitalgroupprojectagora'
     - '-Dsonar.sources=.'
+    - '-Dsonar.scm.disabled=True'
     # - '-Dsonar.projectVersion=${COMMIT_SHA}'
     # secretEnv: ['SONAR_TOKEN']
 
