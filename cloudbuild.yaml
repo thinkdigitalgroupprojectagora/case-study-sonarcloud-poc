@@ -7,7 +7,7 @@ steps:
     - '-Dsonar.sources=.'
     # - '-Dsonar.scm.disabled=True'
     # - '-Dsonar.login={specify}'
-    # - '-Dsonar.projectVersion=${COMMIT_SHA}'
+    - '-Dsonar.projectVersion=${COMMIT_SHA}'
     secretEnv: ['SONAR_TOKEN']
 
 availableSecrets:
