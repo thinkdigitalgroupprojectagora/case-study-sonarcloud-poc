@@ -1,13 +1,13 @@
 steps:
-  - name: 'eu.gcr.io/$PROJECT_ID/pocs-and-tests/sonarsource/sonar-scanner-cli:latest'
+  - name: 'eu.gcr.io/$PROJECT_ID/sonarcloud/sonar-scanner-cli'
     args:
     - '-Dsonar.host.url=https://sonarcloud.io'
-    - '-Dsonar.projectKey=thinkdigitalgroup_sonarcloud-poc-alex-case-study'
-    - '-Dsonar.organization=thinkdigitalgroup'
+    - '-Dsonar.projectKey=thinkdigitalgroupprojectagora_case-study-sonarcloud-poc'
+    - '-Dsonar.organization=thinkdigitalgroupprojectagora'
     - '-Dsonar.sources=.'
     secretEnv: ['SONAR_TOKEN']
 
 availableSecrets:
   secretManager:
-  - versionName: projects/134531484164/secrets/SONAR_TOKEN/versions/latest
+  - versionName: projects/47821157048/secrets/SONAR_TOKEN/versions/latest
     env: 'SONAR_TOKEN'
