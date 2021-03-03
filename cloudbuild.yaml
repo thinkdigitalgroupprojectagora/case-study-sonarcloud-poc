@@ -5,11 +5,12 @@ steps:
     - '-Dsonar.projectKey=thinkdigitalgroupprojectagora_case-study-sonarcloud-poc'
     - '-Dsonar.organization=thinkdigitalgroupprojectagora'
     - '-Dsonar.sources=.'
-    - '-Dsonar.scm.disabled=True'
+    # - '-Dsonar.scm.disabled=True'
+    # - '-Dsonar.login={specify}'
     # - '-Dsonar.projectVersion=${COMMIT_SHA}'
-    # secretEnv: ['SONAR_TOKEN']
+    secretEnv: ['SONAR_TOKEN']
 
-# availableSecrets:
-#   secretManager:
-#   - versionName: projects/47821157048/secrets/SONAR_TOKEN/versions/latest
-#     env: 'SONAR_TOKEN'
+availableSecrets:
+  secretManager:
+  - versionName: projects/47821157048/secrets/SONAR_TOKEN/versions/latest
+    env: 'SONAR_TOKEN'
