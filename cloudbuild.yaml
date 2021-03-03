@@ -6,6 +6,7 @@ steps:
     - '-Dsonar.organization=thinkdigitalgroupprojectagora'
     - '-Dsonar.sources=.'
     - '-Dsonar.projectVersion=${COMMIT_SHA}'
+    - '-Dsonar.pullrequest.key=${_PR_NUMBER}'
     secretEnv: ['SONAR_TOKEN']
 
 availableSecrets:
