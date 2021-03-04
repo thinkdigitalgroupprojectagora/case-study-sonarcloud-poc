@@ -10,6 +10,8 @@ steps:
     - '-Dsonar.pullrequest.branch=${_HEAD_BRANCH}'
     - '-Dsonar.pullrequest.base=${_BASE_BRANCH}'
     secretEnv: ['SONAR_TOKEN']
+    env:
+    - 'GIT_DEPTH=0'
 
 availableSecrets:
   secretManager:
