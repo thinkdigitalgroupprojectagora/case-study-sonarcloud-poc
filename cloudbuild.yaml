@@ -7,6 +7,8 @@ steps:
     - '-Dsonar.sources=.'
     - '-Dsonar.projectVersion=${COMMIT_SHA}'
     - '-Dsonar.pullrequest.key=${_PR_NUMBER}'
+    - '-Dsonar.pullrequest.branch=${_HEAD_BRANCH}'
+    - '-Dsonar.pullrequest.base=${_BASE_BRANCH}'
     secretEnv: ['SONAR_TOKEN']
 
 availableSecrets:
