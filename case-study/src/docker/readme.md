@@ -1,1 +1,0 @@
-Put the dockerfile inside this folder 
