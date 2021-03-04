@@ -1,1 +1,0 @@
-Put the scripts inside this folder
